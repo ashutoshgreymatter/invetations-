@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animated Registration Form</title>
+
+  <style>
+    /* Page setup */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    /* Smooth fade-in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Container box */
+    .container {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      animation: fadeIn 1s ease-in-out;
+      position: relative;
+    }
+
+    .container h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 25px;
+      letter-spacing: 1px;
+    }
+
+    /* Animated input box */
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 10px 10px 5px;
+      font-size: 16px;
+      border: none;
+      border-bottom: 2px solid #ccc;
+      outline: none;
+      background: transparent;
+      transition: 0.3s ease;
+    }
+
+    label {
+      position: absolute;
+      top: 10px;
+      left: 5px;
+      color: #999;
+      font-size: 16px;
+      pointer-events: none;
+      transition: 0.3s ease;
+    }
+
+    /* Floating label effect */
+    input:focus ~ label,
+    input:valid ~ label {
+      top: -15px;
+      font-size: 13px;
+      color: #667eea;
+    }
+
+    input:focus {
+      border-bottom: 2px solid #667eea;
+      box-shadow: 0 2px 5px rgba(102, 126, 234, 0.3);
+    }
+
+    /* Animated button */
+    .btn {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 10px rgba(102, 126, 234, 0.3);
+    }
+
+    .btn:hover {
+      background: linear-gradient(90deg, #764ba2, #667eea);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+    }
+
+    /* Bottom text */
+    .login-link {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .login-link a {
+      color: #667eea;
+      text-decoration: none;
+    }
+
+    .login-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2>Register</h2>
+    <form>
+      <div class="form-group">
+        <input type="text" name="fullname" id="fullname" required>
+        <label for="fullname">Full Name</label>
+      </div>
+
+      <div class="form-group">
+        <input type="email" name="email" id="email" required>
+        <label for="email">Email Address</label>
+      </div>
+
+      <div class="form-group">
+        <input type="tel" name="phone" id="phone" required>
+        <label for="phone">Phone Number</label>
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="password" id="password" required>
+        <label for="password">Password</label>
+      </div>
+
+      <div class="form-group">
+        <input type="password" name="confirm-password" id="confirm-password" required>
+        <label for="confirm-password">Confirm Password</label>
+      </div>
+
+      <button type="submit" class="btn">Register</button>
+
+      <div class="login-link">
+        Already have an account? <a href="#">Login here</a>
+      </div>
+    </form>
+  </div>
+</body>
+</html>
